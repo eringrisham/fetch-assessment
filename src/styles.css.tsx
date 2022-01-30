@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const TitleDiv = styled.div`
-	max-width: 800px;
-	min-width: 800px;
+	max-width: 870px;
+	min-width: 870px;
 	margin: auto;
 	margin-top: 50px;
 	width: 80%;

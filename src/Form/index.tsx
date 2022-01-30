@@ -16,7 +16,8 @@ export const Form: React.FC<FormProps> = ({ occupations, states }) => {
 
 	const [togglePassword, setPasswordToggle] = useState(true);
 
-	const sendEmail = (e: { preventDefault: () => void; }) => {
+	//posts form
+	const sendForm = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
 
 		axios.post(`https://frontend-take-home.fetchrewards.com/form`, input)
@@ -26,11 +27,11 @@ export const Form: React.FC<FormProps> = ({ occupations, states }) => {
 	const handleChange = (e:any) => {
 		let target = e.target as HTMLFormElement;
 		setInput({...input, [target.name]: target.value});
-	}
+	};
 
 	const handleSubmit = (e:any) => {
 		if (input.name && input.email && input.password && input.occupation && input.state) {
-			sendEmail(e);
+			sendForm(e);
 			setInput({name: '', email: '', password: '', occupation: '', state: ''});
 		} else {
 			alert('Please fill out all fields before sending.');
@@ -39,7 +40,7 @@ export const Form: React.FC<FormProps> = ({ occupations, states }) => {
 
 	return (
 		<FormDiv>
-			<form onSubmit={sendEmail}>
+			<form onSubmit={sendForm}>
 				<FormLabel
 					aria-labelledby='username'>
 					Full Name

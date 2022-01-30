@@ -9,6 +9,7 @@ export const App: React.FC = () => {
   const [occupations, setOccupations] = useState([]);
   const [states, setStates] = useState([]);
 
+  //fetches occupation and state data upon page load
   useEffect(() => {
     axios.get(`https://frontend-take-home.fetchrewards.com/form`)
     .then(({data}) => {
