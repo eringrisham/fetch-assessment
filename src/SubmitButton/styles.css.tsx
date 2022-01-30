@@ -6,6 +6,7 @@ export const FormButton = styled.button`
 	font-size: 24px;
 	font-weight: bold;
 	border: 1px solid lightGray;
+	cursor: pointer;
 `
 
 export const IconSpan = styled.span`
