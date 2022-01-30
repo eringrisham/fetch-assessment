@@ -4,7 +4,7 @@ import { AiOutlineSend } from "react-icons/ai";
 
 interface SubmitButtonProps {
 	handleSubmit: (e:any) => void;
-}
+};
 
 export const SubmitButton: React.FC<SubmitButtonProps> = ({ handleSubmit }) => (
 	<FormButton

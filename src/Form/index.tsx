@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FormDiv, FormLabel, FormInput } from './styles.css';
+import { FormDiv, FormLabel, FormInput, IconSpan } from './styles.css';
 import { AiFillEyeInvisible } from 'react-icons/ai';
 import { SubmitButton } from '../SubmitButton';
 import Select from 'react-select';
@@ -8,7 +8,7 @@ import axios from 'axios';
 interface FormProps {
 	occupations: string[];
 	states: string[];
-}
+};
 
 export const Form: React.FC<FormProps> = ({ occupations, states }) => {
 
@@ -21,7 +21,6 @@ export const Form: React.FC<FormProps> = ({ occupations, states }) => {
 
 		axios.post(`https://frontend-take-home.fetchrewards.com/form`, input)
 		.then(() => alert('Form received! Thank you.'));
-
   };
 
 	const handleChange = (e:any) => {
@@ -34,9 +33,9 @@ export const Form: React.FC<FormProps> = ({ occupations, states }) => {
 			sendEmail(e);
 			setInput({name: '', email: '', password: '', occupation: '', state: ''});
 		} else {
-			alert('Please fill out all fields before sending.')
+			alert('Please fill out all fields before sending.');
 		}
-	}
+	};
 
 	return (
 		<FormDiv>
@@ -93,10 +92,11 @@ export const Form: React.FC<FormProps> = ({ occupations, states }) => {
 					placeholder='Password'
 					required>
 				</FormInput>)}
-				<AiFillEyeInvisible
-					onClick={() => setPasswordToggle(!togglePassword)}
-					style={{cursor: 'pointer', color: 'black'}}
-					size={25}/>
+				<IconSpan>
+					<AiFillEyeInvisible
+						onClick={() => setPasswordToggle(!togglePassword)}
+						size={25}/>
+				</IconSpan>
 				<br/>
 				<FormLabel
 					aria-labelledby='occupation'>
@@ -128,5 +128,5 @@ export const Form: React.FC<FormProps> = ({ occupations, states }) => {
 					handleSubmit={handleSubmit}/>
 			</form>
 		</FormDiv>
-	)
+	);
 };

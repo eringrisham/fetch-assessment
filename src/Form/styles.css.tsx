@@ -27,3 +27,8 @@ export const FormInput = styled.input`
 	border: 1px solid lightGray;
 	padding: 5px 0px 5px 10px;
 `
+
+export const IconSpan = styled.span`
+	cursor: pointer;
+	color: black;
+`

@@ -1,5 +1,5 @@
 # Deployed Using Netlify
-This project is deployed on [My Deployed App]().
+This project is deployed on [My Deployed App](https://erin-grisham-fetch.netlify.app/).
 
 # Getting Started with Create React App
 

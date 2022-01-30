@@ -10,7 +10,6 @@ export const App: React.FC = () => {
   const [states, setStates] = useState([]);
 
   useEffect(() => {
-
     axios.get(`https://frontend-take-home.fetchrewards.com/form`)
     .then(({data}) => {
 
@@ -20,7 +19,7 @@ export const App: React.FC = () => {
 
       setOccupations(mappedOccupations);
       setStates(mappedStates);
-    })
+    });
   }, []);
 
   return (
