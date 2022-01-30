@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
+import { TitleDiv } from './styles.css';
+import { Form } from './Form';
+import axios from 'axios';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+export const App: React.FC = () => {
 
-export default App;
+  const [occupations, setOccupations] = useState([]);
+  const [states, setStates] = useState([]);
+
+  useEffect(() => {
+
+    axios.get(`https://frontend-take-home.fetchrewards.com/form`)
+    .then(({data}) => {
+
+      let mappedOccupations = data.occupations.map((occupation: string) => ({value: occupation, label: occupation}));
+
+      let mappedStates = data.states.map((state: { name: string; abbreviation: string }) => ({value: state.name, label: state.name}));
+
+      setOccupations(mappedOccupations);
+      setStates(mappedStates);
+    })
+  }, []);
+
+  return (
+    <>
+      <TitleDiv>
+        Fetch Rewards Front End Assessment
+      </TitleDiv>
+      <Form occupations={occupations} states={states}/>
+    </>
+  );
+};
