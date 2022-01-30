@@ -13,7 +13,7 @@ export const SubmitButton: React.FC<SubmitButtonProps> = ({ handleSubmit }) => (
 		value="Send">
 		Send
 		<IconSpan>
-			<AiOutlineSend size={25}/>
+			<AiOutlineSend size={20}/>
 		</IconSpan>
 	</FormButton>
 );

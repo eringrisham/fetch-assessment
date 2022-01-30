@@ -9,5 +9,5 @@ export const FormButton = styled.button`
 `
 
 export const IconSpan = styled.span`
-	margin-left: 8%;
+	margin-left: 10%;
 `

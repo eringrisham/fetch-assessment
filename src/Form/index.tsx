@@ -16,7 +16,7 @@ export const Form: React.FC<FormProps> = ({ occupations, states }) => {
 
 	const [togglePassword, setPasswordToggle] = useState(true);
 
-	//posts form
+	//posts form to fetch endpoint
 	const sendForm = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
 
@@ -29,6 +29,7 @@ export const Form: React.FC<FormProps> = ({ occupations, states }) => {
 		setInput({...input, [target.name]: target.value});
 	};
 
+	//only sends form if all fields are complete; otherwise, alert message
 	const handleSubmit = (e:any) => {
 		if (input.name && input.email && input.password && input.occupation && input.state) {
 			sendForm(e);
