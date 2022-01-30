@@ -1,6 +1,12 @@
 # Deployed Using Netlify
 This project is deployed on [My Deployed App](https://erin-grisham-fetch.netlify.app/).
 
+# GET Request: Retrieve Data from Fetch Rewards URL
+Upon page load, site will make one GET request to [Fetch Rewards](https://frontend-take-home.fetchrewards.com/form) and save occupation and state data in React state. That data populates drop down menus for users to select before form submission.
+
+# POST Request: Send Form Data to Fetch Rewards URL
+Users must complete 5 fields (Full Name, Email, Password, Occupation, and State) before submitting form through "Send" button to [Fetch Rewards](https://frontend-take-home.fetchrewards.com/form). If at least one field is not complete, user will be alerted that they need to fill out the remaining fields. Additionally, password visibility can be toggled.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
